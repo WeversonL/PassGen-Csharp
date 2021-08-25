@@ -844,11 +844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/weverson/Documentos/Projetos/C#/PassGen/PassGen.csproj",
+      "projectUniqueName": "/media/HD/6 - Github/PassGen/PassGen.csproj",
       "projectName": "PassGen",
-      "projectPath": "/home/weverson/Documentos/Projetos/C#/PassGen/PassGen.csproj",
+      "projectPath": "/media/HD/6 - Github/PassGen/PassGen.csproj",
       "packagesPath": "/home/weverson/.nuget/packages/",
-      "outputPath": "/home/weverson/Documentos/Projetos/C#/PassGen/obj/",
+      "outputPath": "/media/HD/6 - Github/PassGen/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/weverson/.nuget/NuGet/NuGet.Config"

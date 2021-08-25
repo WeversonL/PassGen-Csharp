@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cAvkFt3gbQTX9Vi9cb4bXKaaUyICX0Dv4fJDAdTNy0vXxSBbjic77k3sBB2NpXhg2d0bb+zSPNVNA8k014UQTQ==",
+  "dgSpecHash": "N63wPkxR5BF3DD1FBhX5CHyKzsTCaPl8bP+jYPOOGKIpyTnDWBF8ZFxx21b2K0if5M1AfTCGLxb79uSS5vTb3w==",
   "success": true,
-  "projectFilePath": "/home/weverson/Documentos/Projetos/C#/PassGen/PassGen.csproj",
+  "projectFilePath": "/media/HD/6 - Github/PassGen/PassGen.csproj",
   "expectedPackageFiles": [
     "/home/weverson/.nuget/packages/bouncycastle.netcore/1.8.5/bouncycastle.netcore.1.8.5.nupkg.sha512",
     "/home/weverson/.nuget/packages/google.protobuf/3.14.0/google.protobuf.3.14.0.nupkg.sha512",
