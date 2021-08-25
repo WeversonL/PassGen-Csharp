@@ -7,8 +7,8 @@ namespace Conection_Database
     {   
         static manipulacao con = new manipulacao();
         static gerador gen = new gerador();
-        static void Main(string[] args)
-        {
+
+        static void Main(string[] args){
             while (true){
                 String opcao;
 
@@ -206,12 +206,10 @@ namespace Conection_Database
                         Console.ResetColor();
                         Console.WriteLine("".PadLeft(30,'-'));
                     }
-                    Console.ReadKey();
-                    
+                    Console.ReadKey();  
                 }
 
                 else if (opcao == "3"){
-
                     Console.Clear();
                     MySqlDataReader read = con.obterDados();
                     
@@ -220,13 +218,11 @@ namespace Conection_Database
                     Console.ResetColor();
                     Console.WriteLine("".PadLeft(50,'-'));
                     Console.ReadKey();
-
                 }
 
                 else if (opcao == "4"){
                     break;
                 }
-
             } 
         }
     }

@@ -6,6 +6,7 @@ public class manipulacao{
     conexao con = new conexao();
     private MySqlCommand cmd;
     private string StrSQL;
+
     public void inserirDados(string usuario, string senha, string aplicacao){
 
         if (!con.getStatus()){
@@ -14,17 +15,15 @@ public class manipulacao{
             } catch (Exception e){
                 Console.WriteLine($"--- ERRO ---\n\n{e}");
             }
-        }    
+        }  
+
         StrSQL = "INSERT INTO Passwords (user, password, application) VALUES (@USER, @PASSWORD, @APPLICATION)";
 
         cmd = new MySqlCommand(StrSQL, con.conectar());
-        //
         cmd.Parameters.AddWithValue("@USER",usuario);
         cmd.Parameters.AddWithValue("@PASSWORD",senha);
         cmd.Parameters.AddWithValue("@APPLICATION",aplicacao);
-        //
         cmd.ExecuteNonQuery();
-        //
         con.desconectar();
     }
 
@@ -43,11 +42,11 @@ public class manipulacao{
         cmd.ExecuteNonQuery();
 
         MySqlDataReader myReader;
-        myReader= cmd.ExecuteReader();  //stop here
-        try
-        {
-            while (myReader.Read())
-            {
+        myReader= cmd.ExecuteReader();  
+        try{
+
+            while (myReader.Read()){
+
                 Console.Write("APP: ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(myReader.GetString(3));
@@ -69,12 +68,7 @@ public class manipulacao{
         } catch(Exception e){
             Console.WriteLine(e);
         }
-
         con.desconectar();
-
         return myReader;
-
-    }
-
-    
+    }  
 }
