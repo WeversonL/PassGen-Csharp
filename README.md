@@ -10,19 +10,19 @@ It requires .NET installed and a MySQL database installed, a database and a user
 
 - In your shell
 
-    sudo apt update
-    sudo apt install mariadb-client mariadb-server mariadb-common
-    sudo mysql
+        sudo apt update
+        sudo apt install mariadb-client mariadb-server mariadb-common
+        sudo mysql
 
 - At MariaDB
 
-    create database PassGen;
+        create database PassGen;
 
-    create table Passwords(id int(11) NOT NULL AUTO_INCREMENT, user varchar(250),password varchar(50) NOT NULL, application varchar(250), primary key (id));
+        create table Passwords(id int(11) NOT NULL AUTO_INCREMENT, user varchar(250),password varchar(50) NOT NULL, application varchar(250), primary key (id));
     
-    grant all on PassGen.* to PassGenApp@'%' identified by '78964254';
+        grant all on PassGen.* to PassGenApp@'%' identified by '78964254';
 
-    flush privileges;
+        flush privileges;
 
 ## Functions
 
@@ -36,8 +36,8 @@ It requires .NET installed and a MySQL database installed, a database and a user
 
 - To run the application, clone this github repository
 
-    git clone xxxxxxxxxxxx
+        git clone https://github.com/WeversonL/PassGen-Csharp.git
 
 - Enter the project folder and run using .NET
 
-    dotnet run
+        dotnet run
