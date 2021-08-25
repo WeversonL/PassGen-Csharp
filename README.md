@@ -17,11 +17,8 @@ It requires .NET installed and a MySQL database installed, a database and a user
 - At MariaDB
 
         create database PassGen;
-
         create table Passwords(id int(11) NOT NULL AUTO_INCREMENT, user varchar(250),password varchar(50) NOT NULL, application varchar(250), primary key (id));
-    
         grant all on PassGen.* to PassGenApp@'%' identified by '78964254';
-
         flush privileges;
 
 ## Functions
