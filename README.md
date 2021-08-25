@@ -32,6 +32,8 @@ It requires .NET installed and a MySQL database installed, a database and a user
 
 - 3° Display your passwords saved in the database, along with other data such as application and username
 
+![Screenshot](/Screenshots/screenshot.png)
+
 ## Installation and execution
 
 - To run the application, clone this github repository
