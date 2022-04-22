@@ -1,52 +1,56 @@
 using System;
-using System.Data;
 using MySql.Data.MySqlClient;
 
-public class manipulacao{
-    conexao con = new conexao();
+public class Repository
+{
     private MySqlCommand cmd;
+    private readonly Connection connection = new();
     private string StrSQL;
 
-    public void inserirDados(string usuario, string senha, string aplicacao){
-
-        if (!con.getStatus()){
-            try{
-                con.conectar();
-            } catch (Exception e){
+    public void insertData(string usuario, string senha, string aplicacao)
+    {
+        if (!connection.getStatus())
+            try
+            {
+                connection.connect();
+            }
+            catch (Exception e)
+            {
                 Console.WriteLine($"--- ERRO ---\n\n{e}");
             }
-        }  
 
         StrSQL = "INSERT INTO Passwords (user, password, application) VALUES (@USER, @PASSWORD, @APPLICATION)";
 
-        cmd = new MySqlCommand(StrSQL, con.conectar());
-        cmd.Parameters.AddWithValue("@USER",usuario);
-        cmd.Parameters.AddWithValue("@PASSWORD",senha);
-        cmd.Parameters.AddWithValue("@APPLICATION",aplicacao);
+        cmd = new MySqlCommand(StrSQL, connection.connect());
+        cmd.Parameters.AddWithValue("@USER", usuario);
+        cmd.Parameters.AddWithValue("@PASSWORD", senha);
+        cmd.Parameters.AddWithValue("@APPLICATION", aplicacao);
         cmd.ExecuteNonQuery();
-        con.desconectar();
+        connection.disconnect();
     }
 
-    public MySqlDataReader obterDados(){
-
-        if (!con.getStatus()){
-            try{
-                con.conectar();
-            } catch (Exception e){
+    public MySqlDataReader getData()
+    {
+        if (!connection.getStatus())
+            try
+            {
+                connection.connect();
+            }
+            catch (Exception e)
+            {
                 Console.WriteLine($"--- ERRO ---\n\n{e}");
             }
-        } 
 
         StrSQL = "SELECT * FROM Passwords";
-        cmd = new MySqlCommand(StrSQL, con.conectar());
+        cmd = new MySqlCommand(StrSQL, connection.connect());
         cmd.ExecuteNonQuery();
 
         MySqlDataReader myReader;
-        myReader= cmd.ExecuteReader();  
-        try{
-
-            while (myReader.Read()){
-
+        myReader = cmd.ExecuteReader();
+        try
+        {
+            while (myReader.Read())
+            {
                 Console.Write("APP: ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(myReader.GetString(3));
@@ -62,13 +66,15 @@ public class manipulacao{
                 Console.Write(myReader.GetString(2) + "\n");
                 Console.ResetColor();
 
-                Console.WriteLine("".PadLeft(50,'-'));
-                
+                Console.WriteLine("".PadLeft(50, '-'));
             }
-        } catch(Exception e){
+        }
+        catch (Exception e)
+        {
             Console.WriteLine(e);
         }
-        con.desconectar();
+
+        connection.disconnect();
         return myReader;
-    }  
+    }
 }

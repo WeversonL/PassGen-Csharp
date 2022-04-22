@@ -2,11 +2,13 @@
 
 ### Application is a CLI password generator with link to local database
 
-Application made in C# using .NET 5.0. Made to practice the experience with C# and link with database. I usually use a lot of CLI tools, so I thought, why not do mine, since password generators and stores are frequent in my daily life
+Application made in C# using .NET 5.0. Made to practice the experience with C# and link with database. I usually use a
+lot of CLI tools, so I thought, why not do mine, since password generators and stores are frequent in my daily life
 
 ## Dependencies
 
-It requires .NET installed and a MySQL database installed, a database and a user created for the application. Below is the code for installing and configuring the database for Ubuntu 20.04
+It requires .NET installed and a MySQL database installed, a database and a user created for the application. Below is
+the code for installing and configuring the database for Ubuntu 20.04
 
 - In your shell
 
@@ -23,7 +25,8 @@ It requires .NET installed and a MySQL database installed, a database and a user
 
 ## Functions
 
-- 1° Generate a password and save it to the database (or not). You can choose or not to save the application (As URL or name) and your Username.
+- 1° Generate a password and save it to the database (or not). You can choose or not to save the application (As URL or
+  name) and your Username.
 
 - 2° Same as above, but you can enter an existing password to be saved in the database
 
